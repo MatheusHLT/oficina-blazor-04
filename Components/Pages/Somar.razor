@@ -1,0 +1,23 @@
+@page "/somar"
+@rendermode InteractiveServer
+
+<input type="number" @bind="a" @bind:event="oninput" />
+<input type="number" @bind="b" @bind:event="oninput" />
+
+<p>Somar: @Soma(a, b)</p>
+<p>Media: @Media(a, b)</p>
+
+@code {
+    double a = 10;
+    double b = 20;
+
+    double Soma(double x, double y)
+    {
+        return x + y;
+    }
+
+    double Media(double x, double y)
+    {
+        return Soma(x, y) / 2;
+    }
+}
